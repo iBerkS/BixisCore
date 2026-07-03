@@ -1,0 +1,20 @@
+# Maven
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jar (releases GitHub'da attachment olarak gider)
+*.jar
+
+# CLAUDE
+CLAUDE.md

@@ -1,0 +1,26 @@
+# ============================================================
+#  BixisCore yapılandırması
+#  Kural: İngilizce key, Türkçe açıklama/value
+# ============================================================
+
+database:
+  # Kullanılacak veritabanı tipi: sqlite | mysql
+  # Şimdilik sqlite kullanılıyor. MySQL hazır olunca "mysql" yapılacak.
+  type: sqlite
+
+  # SQLite ayarları (varsayılan)
+  sqlite:
+    # Dosya, plugin klasörü içinde oluşturulur
+    file: data.db
+
+  # MySQL ayarları (ileride doldurulacak — şimdilik boş bırakıldı)
+  mysql:
+    host: ""
+    port: 3306
+    database: ""
+    username: ""
+    password: ""
+    # Bağlantı havuzu boyutu
+    pool-size: 10
+    # Ek HikariCP bağlantı özellikleri
+    use-ssl: false

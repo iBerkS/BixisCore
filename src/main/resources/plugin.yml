@@ -1,0 +1,18 @@
+name: BixisCore
+main: com.yeditepemc.bixiscore.BixisCorePlugin
+version: 1.0.0
+api-version: '1.21'
+authors: [iBerkS]
+description: YeditepeMC ağı için merkezi veri ve API kütüphanesi.
+
+# NOT: Aşağıdaki komut GEÇİCİDİR — sürüm öncesi kaldırılacak (bkz. CLAUDE.md > Test Komutları)
+commands:
+  bixiscore:
+    description: BixisCore geçici test komutu
+    usage: /bixiscore <info|addxp|addcoin|reset>
+    permission: bixiscore.admin
+
+permissions:
+  bixiscore.admin:
+    description: BixisCore test komutlarını kullanma izni
+    default: op
