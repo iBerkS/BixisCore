@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -54,8 +55,14 @@ public final class BixisCorePlugin extends JavaPlugin implements Listener {
             getLogger().warning("Vault veya bir ekonomi eklentisi bulunamadı! Coin işlemleri devre dışı.");
         }
 
-        // 4) Public API
+        // 4) Public API — hem static getter hem de Bukkit ServicesManager ile erişilebilir
         this.api = new BixisCoreAPI(this, playerDataManager);
+        getServer().getServicesManager().register(
+                BixisCoreAPI.class,
+                api,
+                this,
+                ServicePriority.Normal
+        );
 
         // 5) Event dinleyicileri
         getServer().getPluginManager().registerEvents(playerDataManager, this);
